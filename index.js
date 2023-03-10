@@ -13,26 +13,41 @@ const bisection = ({ f, a, b, e }, N = 1, results = []) => {
     'f(c)': fc,
   };
 
-  
   if (b - c <= e) {
     resultPerIteration.keterangan = 'Titik yang dicari';
     results.push(resultPerIteration);
-    return console.log(results);
+    return results;
   }
   
   resultPerIteration.keterangan = 'Bukan titik yang dicari';
   results.push(resultPerIteration);
 
   f(b)*f(c) <= 0
-  ? a = c 
+  ? a = c
   : b = c;
   
-  bisection({ f, a, b, e }, N + 1, results);
+  return bisection({ f, a, b, e }, N + 1, results);
 };
 
-bisection({
+const bisectionResult = bisection({
   f: (x) => (x**5)-3*(x**3)+2*(x**2)+7,
   a: -2,
   b: 4,
   e: 0.0001,
 });
+
+const body = document.querySelector('#table_id tbody');
+
+bisectionResult.forEach((result) => {
+  body.innerHTML += `
+    <tr>
+        <td>${result.iterasi}</td>
+        <td>${result.a}</td>
+        <td>${result.b}</td>
+        <td>${result['b - c']}</td>
+        <td>${result['f(b)']}</td>
+        <td>${result['f(c)']}</td>
+        <td>${result.keterangan}</td>
+    </tr>
+  `;
+})
