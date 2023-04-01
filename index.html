@@ -22,7 +22,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        max-width: 400px;
+        max-width: fit-content;
         margin: 20px auto;
       }
 
@@ -36,6 +36,11 @@
         margin-left: 35px;
         margin-top: 10px;
         margin-bottom: 10px;
+      }
+
+      .table-container {
+        overflow-x: scroll;
+        margin-bottom: 80px;
       }
     </style>
     <title>Bisection</title>
@@ -66,21 +71,26 @@
           <strong>Titik yang dicari ditemukan pada iterasi ke-16</strong>
         </p>
       </div>
-      <table id="table_id" class="display">
-        <thead>
-            <tr>
-                <th>Iterasi</th>
-                <th>a</th>
-                <th>b</th>
-                <th>b - c</th>
-                <th>f(b)</th>
-                <th>f(c)</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+      <hr>
+      <marquee><strong>Geser kiri-kanan jika table tidak cukup pada layar</strong></marquee>
+      <hr>
+      <div class="table-container">
+        <table id="table_id" class="display">
+          <thead>
+              <tr>
+                  <th>Iterasi</th>
+                  <th>a</th>
+                  <th>b</th>
+                  <th>b - c</th>
+                  <th>f(b)</th>
+                  <th>f(c)</th>
+                  <th>Keterangan</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </main>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
