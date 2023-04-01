@@ -17,11 +17,54 @@
         max-width: 1000px;
         margin: 25px auto;
       }
+
+      .cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+
+      .desc {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .desc ul {
+        margin-left: 35px;
+        margin-top: 10px;
+      }
     </style>
     <title>Bisection</title>
   </head>
   <body>
     <main>
+      <div class="cover">
+        <ul>
+          <li>NPM : 11210102</li>
+          <li>Nama : Adi Muhamad Firmansyah</li>
+          <li>Matkul : Metode Numerik</li>
+        </ul>
+      </div>
+      <div class="desc">
+        <p>
+          Melakukan iterasi untuk mencari akar persaman x^5-3x^3+2x^2+7 dengan diketahui : 
+          <ul>
+            <li>
+              batas bawah (a) = -2 
+            </li>
+            <li>
+              batas atas (b) = 4
+            </li>
+            <li>
+              epsilon = 0.0001
+            </li>
+          </ul>
+        </p>
+        
+      </div>
       <table id="table_id" class="display">
         <thead>
             <tr>
